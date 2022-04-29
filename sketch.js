@@ -187,6 +187,7 @@ function keyReleased() {
 }
 
 function gameOver() {
+  // SweetAlert
   swal(
     {
       title: `Fim de Jogo!!!`,
@@ -198,6 +199,7 @@ function gameOver() {
     },
     function(isConfirm) {
       if (isConfirm) {
+        // carregar novamente a tela
         location.reload();
       }
     }
