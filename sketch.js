@@ -43,7 +43,7 @@ function setup() {
   tower = Bodies.rectangle(160, 350, 160, 310, { isStatic: true });
   World.add(world, tower);
 
-  cannon = new Cannon(180, 110, 100, 50, angle);
+  cannon = new Cannon(180, 110, 100, 100, angle);
 
   var boatFrames = boatSpritedata.frames;
   for (var i = 0; i < boatFrames.length; i++) {
