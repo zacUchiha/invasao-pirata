@@ -15,7 +15,7 @@ var brokenBoatSpritedata, brokenBoatSpritesheet;
 
 var waterSplashAnimation = [];
 var waterSplashSpritedata, waterSplashSpritesheet;
-
+var backgroundSound;
 var isGameOver = false;
 
 function preload() {
@@ -27,6 +27,7 @@ function preload() {
   brokenBoatSpritesheet = loadImage("assets/boat/broken_boat.png");
   waterSplashSpritedata = loadJSON("assets/water_splash/water_splash.json");
   waterSplashSpritesheet = loadImage("assets/water_splash/water_splash.png");
+  backgroundSound = loadSound("assets/background_music.mp3");
 }
 
 function setup() {
@@ -65,11 +66,17 @@ function setup() {
     var img = waterSplashSpritesheet.get(pos.x, pos.y, pos.w, pos.h);
     waterSplashAnimation.push(img);
   }
+  
 }
 
 function draw() {
   background(189);
   image(backgroundImg, 0, 0, width, height);
+
+  if (!backgroundSound.isPlaying()){
+    backgroundSound.play();
+    backgroundSound.setVolume(0.10);
+  }
 
   Engine.update(engine);
  
